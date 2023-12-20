@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    background-color: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+/* Page d'accueil */
+
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.search-bar {
+    background: #EAEAEA;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0;
+    z-index: -1;
+}
+
+.search-bar input {
+    background: #EAEAEA;
+    border: none;
+    display: flex;
+    text-align: center;
+    width: 110px; 
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+section#intro {
+    background: #f2f2f2;
+    width: 100%;
+    text-align: center;
+}
+
+section#intro h1 {
+    padding: 40px 20px 10px 20px;
+    font-size: 30px
+}
+
+section#intro p {
+    font-size: 20px;
+    padding: 0px 10px 30px 10px;
+    font-weight: 300;
+}
+
+.btn-explorer {
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    width: 180px;
+    height: 45px;
+    background: linear-gradient(#ff79Da, #9356DC);
+    color: #ffffff;
+    margin: 0 0 40px 0;
+    box-shadow: 2px 4px 8px 5px #cbcbcb;
+}
+
+.function {
+    background: #ffffff;
+}
+
+.function h1 {
+    padding: 30px 0 0 20px;
+}
+
+@media  screen and (min-width: 768px) {
+    .function h1 {
+        font-size: 24px;
+        margin: 0 0 0 150px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container-information {
+        display: flex;
+        flex-direction: row;
+        gap: 38px;
+        justify-content: center;
+    }
+}
+
+
+.information {
+    background: #f2f2f2;
+    width: 80%;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    text-align: center;
+    align-items: center;
+    margin: 30px auto 30px auto;
+    position: relative;
+    box-shadow: 0px 5px 11px 2px #e1e1e1;
+}
+
+@media screen and (min-width: 768px) {
+    .information {
+        display: flex;
+        flex-direction: row;
+        width: 23%;
+        margin: 30px 0 50px 0;
+    }
+
+}
+
+.function .container-information .information .fa-mobile-screen-button {
+    color: #7e7e7e;
+    margin: auto 20px auto 40px;
+}
+
+.information .fa-list-ul {
+    color: #7e7e7e;
+    margin: auto 20px auto 40px;
+}
+
+.information .fa-store {
+    color: #9356dc;
+    margin: auto 20px auto 40px;
+}
+
+.function .number {
+    background: #9356dc;
+    color: white;
+    display: flex;
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -13px;
+}
+
+.restaurant {
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 70px 0;
+}
+
+.restaurant h1 {
+    padding: 30px 0 30px 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .restaurant h1 {
+        font-size: 24px;
+        margin: 0 0 0 150px;
+    }
+}
+
+.restaurant .cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .restaurant .cards {
+        display: flex;
+        flex-direction: row;
+        gap: 70px;
+    }
+}
+
+.restaurant .cards a {
+    width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+    .restaurant .cards a{
+        width: 36%;
+        
+    }
+}
+
+.restaurant .cards .card {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: .3s;
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.restaurant .cards .card .new-menu {
+    background-color: #99e2d0;
+    color: #008766;
+    position: absolute;
+    padding: 10px 20px 10px 20px;
+    border-radius: 4px;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+}
+
+.restaurant .cards .card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.restaurant .cards .card .container {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.restaurant .cards .card .container .description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: black;
+}
+
+.restaurant .cards .card .container .description span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.restaurant .cards .card .container .description i{
+    font-size: 24px;
+    margin: -15px 20px 0 0;
+}
+
+.restaurant .cards .card .container .description i:hover {
+  color: linear-gradient(#ff79Da, #9356DC); 
+}
+
+.footer  {
+    background: #353535;
+    color: white;
+    padding: 20px 0 30px 30px;
+}
+
+.footer span {
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 20px;
+
+}
+
+.footer .links {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+}
+
+.footer .links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer .links ul li {
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer .links ul li i {
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    width: 15px;
+}
+
+/* Menu 1 */
+
+.navbar i {
+    display: flex;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.main-menu {
+    background-color: #f2f2f2;
+    padding-bottom: 1px;
+}
+
+.image-menu {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.menu {
+    background: #f2f2f2;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    top: -55px;
+}
+
+.menu h1 {
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 30px 0 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu h1 i {
+    margin: 0px 35px 0 0;
+
+}
+
+.menu .appetizer h3 {
+    padding: 30px 0 20px 15px;
+    font-weight: 300;
+}
+
+.menu .appetizer h3:after {
+    content: " ";
+}
+
+.menu .appetizer .choix {
+    background: #ffffff;
+    width: 85%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 10px 15px 10px 15px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0px 7px 10px 2px #e1e1e1;
+}
+
+.menu .appetizer .choix span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.menu .main-course h3 {
+    padding: 30px 0 20px 15px;
+    font-weight: 300;
+}
+
+.menu .main-course .choix {
+    background: #ffffff;
+    width: 85%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 10px 15px 10px 15px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0px 7px 10px 2px #e1e1e1;
+}
+
+.menu .main-course .choix span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.menu .dessert h3 {
+    padding: 30px 0 20px 15px;
+    font-weight: 300;
+}
+
+.menu .dessert .choix {
+    background: #ffffff;
+    width: 85%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 10px 15px 10px 15px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0px 7px 10px 2px #e1e1e1;
+}
+
+.menu .dessert .choix span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.btn-commande {
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 180px;
+    height: 45px;
+    background: linear-gradient(#ff79Da, #9356DC);
+    color: #ffffff;
+    margin: 50px auto 0 auto;
+    box-shadow: 2px 4px 8px 5px #cbcbcb;
+}
