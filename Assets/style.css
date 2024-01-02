@@ -249,13 +249,15 @@ section#intro p {
     justify-content: space-between;
 }
 
-.restaurant .cards .card .container .description i{
+.restaurant .cards .card .container .description .fa-heart {
     font-size: 24px;
     margin: -15px 20px 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
-.restaurant .cards .card .container .description i:hover {
-  color: linear-gradient(#ff79Da, #9356DC); 
+.restaurant .cards .card .container .description .fa-heart:hover {
+    background-color: linear-gradient(#ff79Da, #9356DC); 
 }
 
 .footer  {
@@ -306,6 +308,14 @@ section#intro p {
     padding-bottom: 1px;
 }
 
+@media screen and (min-width : 768px) {
+    .main-menu {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .image-menu {
     width: 100%;
     height: 280px;
@@ -319,6 +329,16 @@ section#intro p {
     top: -55px;
 }
 
+@media screen and (min-width : 768px){
+    .menu {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: -30px;
+    }
+}
+
 .menu h1 {
     font-family: 'Shrikhand', sans-serif;
     font-size: 30px;
@@ -329,9 +349,27 @@ section#intro p {
     align-items: center;
 }
 
+@media screen and (min-width : 768px) {
+    .menu h1 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 50px 0 30px 20px;
+    }
+}
+
 .menu h1 i {
     margin: 0px 35px 0 0;
 
+}
+
+@media screen and (min-width : 768px) {
+    .appetizer {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
 }
 
 .menu .appetizer h3 {
@@ -339,21 +377,52 @@ section#intro p {
     font-weight: 300;
 }
 
-.menu .appetizer h3:after {
-    content: " ";
+@media screen and (min-width : 768px) {
+    .menu .appetizer h3 {
+        display: flex;
+        padding: 30px 0 20px 45px;
+    }
 }
 
 .menu .appetizer .choix {
     background: #ffffff;
-    width: 85%;
-    height: 50px;
+    width: 90%;
+    height: 70px;
+    display: flex;
+    border-radius: 12px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0px 7px 10px 2px #e1e1e1;
+    justify-content: space-between;
+}
+
+.menu .appetizer .choix .content {
+    padding: 10px 15px 10px 15px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 12px;
-    padding: 10px 15px 10px 15px;
-    margin: 0 auto 15px auto;
-    box-shadow: 0px 7px 10px 2px #e1e1e1;
+    gap: 2px;
+}
+
+.menu .appetizer .choix .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    border-radius: 0 12px 12px 0;
+    background-color: #99e2d0;
+    color: #fff;
+    width: 0;
+    height: 100%;
+    transition: width 0.5s, transform 3s;
+}
+
+.menu .appetizer .choix:hover .check {
+    width: 100px;
+}
+
+.fa-circle-check {
+    overflow: hidden;
 }
 
 .menu .appetizer .choix span {
@@ -362,22 +431,60 @@ section#intro p {
     font-size: 15px;
 }
 
+@media screen and (min-width : 768px) {
+    .main-course {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+}
+
 .menu .main-course h3 {
     padding: 30px 0 20px 15px;
     font-weight: 300;
 }
 
+@media screen and (min-width : 768px) {
+    .menu .main-course h3 {
+        display: flex;
+        padding: 30px 0 20px 45px;
+    }
+}
+
 .menu .main-course .choix {
     background: #ffffff;
-    width: 85%;
-    height: 50px;
+    width: 90%;
+    height: 70px;
+    display: flex;
+    border-radius: 12px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0px 7px 10px 2px #e1e1e1;
+}
+
+.menu .main-course .choix .content {
+    padding: 10px 15px 10px 15px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 12px;
-    padding: 10px 15px 10px 15px;
-    margin: 0 auto 15px auto;
-    box-shadow: 0px 7px 10px 2px #e1e1e1;
+    gap: 2px;
+}
+
+.menu .main-course .choix .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    border-radius: 0 12px 12px 0;
+    background-color: #99e2d0;
+    color: #fff;
+    width: 0;
+    height: 100%;
+    transition: width 0.5s, transform 3s;
+}
+
+.menu .main-course .choix:hover .check {
+    width: 100px;
 }
 
 .menu .main-course .choix span {
@@ -386,22 +493,60 @@ section#intro p {
     font-size: 15px;
 }
 
+@media screen and (min-width : 768px) {
+    .dessert {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+}
+
 .menu .dessert h3 {
     padding: 30px 0 20px 15px;
     font-weight: 300;
 }
 
+@media screen and (min-width : 768px) {
+    .menu .dessert h3 {
+        display: flex;
+        padding: 30px 0 20px 45px;
+    }
+}
+
 .menu .dessert .choix {
     background: #ffffff;
-    width: 85%;
-    height: 50px;
+    width: 90%;
+    height: 70px;
+    display: flex;
+    border-radius: 12px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0px 7px 10px 2px #e1e1e1;
+}
+
+.menu .dessert .choix .content {
+    padding: 10px 15px 10px 15px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 12px;
-    padding: 10px 15px 10px 15px;
-    margin: 0 auto 15px auto;
-    box-shadow: 0px 7px 10px 2px #e1e1e1;
+    gap: 2px;
+}
+
+.menu .dessert .choix .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    border-radius: 0 12px 12px 0;
+    background-color: #99e2d0;
+    color: #fff;
+    width: 0;
+    height: 100%;
+    transition: width 0.5s, transform 3s;
+}
+
+.menu .dessert .choix:hover .check {
+    width: 100px;
 }
 
 .menu .dessert .choix span {
