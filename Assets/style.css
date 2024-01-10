@@ -18,12 +18,61 @@ body {
 
 /* Page d'accueil */
 
+.loader { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e1e1e1; 
+    opacity: 0.7;
+    animation: loader 1s linear 1s normal forwards;
+    z-index: 2;
+}
+
+
+.loader::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    border: 10px solid #ffc2ee;
+    border-top-color:  #ff79da ;
+    border-radius: 50%;
+    animation: loading 2s ease infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(3turn);
+    }
+}
+
+@keyframes loader {
+    0% {
+        opacity: 0.7;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 .navbar {
     width: 100%;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
     padding: 20px 0;
+    position: relative;
 }
 
 .search-bar {
@@ -251,13 +300,23 @@ section#intro p {
 
 .restaurant .cards .card .container .description .fa-heart {
     font-size: 24px;
-    margin: -15px 20px 0 0;
+    position: absolute;
+    bottom: 22px;
+    right: 30px;
     background-clip: text;
     -webkit-background-clip: text;
 }
 
-.restaurant .cards .card .container .description .fa-heart:hover {
-    background-color: linear-gradient(#ff79Da, #9356DC); 
+.heart-two {
+    opacity: 0;
+}
+
+.heart-two:hover {
+    opacity: 1;
+    background-clip: text;
+    background: linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    color: transparent;
+    transform: scale(1.1);
 }
 
 .footer  {
@@ -301,11 +360,7 @@ section#intro p {
     position: absolute;
     left: 30px;
     top: 30px;
-}
-
-.main-menu {
-    background-color: #f2f2f2;
-    padding-bottom: 1px;
+    color: black;
 }
 
 @media screen and (min-width : 768px) {
@@ -326,7 +381,8 @@ section#intro p {
     background: #f2f2f2;
     border-radius: 30px 30px 0 0;
     position: relative;
-    top: -55px;
+    margin-top: -55px;
+    padding-bottom: 40px;
 }
 
 @media screen and (min-width : 768px){
@@ -335,7 +391,8 @@ section#intro p {
         display: flex;
         flex-direction: column;
         align-items: center;
-        top: -30px;
+        margin-top: -30px;
+        padding-bottom: 40px;
     }
 }
 
@@ -359,9 +416,21 @@ section#intro p {
     }
 }
 
-.menu h1 i {
-    margin: 0px 35px 0 0;
+.menu h1 .fa-heart {
+    position: absolute;
+    right: 30px;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
 
+@media screen and (min-width: 768px) {
+    .menu h1 .fa-heart {
+        right: 300px;
+    }
+}
+
+.menu .appetizer {
+    animation: loading-appetizer 1s ease;
 }
 
 @media screen and (min-width : 768px) {
@@ -372,9 +441,24 @@ section#intro p {
     }
 }
 
+@keyframes loading-appetizer {
+    0% {
+      transform:  translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
 .menu .appetizer h3 {
     padding: 30px 0 20px 15px;
     font-weight: 300;
+    text-decoration-line: underline;
+    text-decoration-color: #99E2D0;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
 }
 
 @media screen and (min-width : 768px) {
@@ -421,8 +505,30 @@ section#intro p {
     width: 100px;
 }
 
+.menu .appetizer .choix:hover .fa-circle-check {
+    animation: spin 0.5s ease-in-out normal;
+}
+
+.menu .main-course .choix:hover .fa-circle-check {
+    animation: spin 0.5s ease-in-out normal;
+}
+
+.menu .dessert .choix:hover .fa-circle-check {
+    animation: spin 0.5s ease-in-out normal;
+}
+
 .fa-circle-check {
     overflow: hidden;
+    
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .menu .appetizer .choix span {
@@ -430,6 +536,27 @@ section#intro p {
     justify-content: space-between;
     font-size: 15px;
 }
+
+.menu .appetizer .choix p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.menu .main-course {
+    animation: loading-main-course 2s ease;
+}
+
+@keyframes loading-main-course {
+    0% {
+      transform:  translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
 
 @media screen and (min-width : 768px) {
     .main-course {
@@ -442,6 +569,10 @@ section#intro p {
 .menu .main-course h3 {
     padding: 30px 0 20px 15px;
     font-weight: 300;
+    text-decoration-line: underline;
+    text-decoration-color: #99E2D0;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
 }
 
 @media screen and (min-width : 768px) {
@@ -493,6 +624,21 @@ section#intro p {
     font-size: 15px;
 }
 
+.menu .dessert {
+    animation: loading-dessert 3s ease;
+}
+
+@keyframes loading-dessert {
+    0% {
+      transform:  translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
 @media screen and (min-width : 768px) {
     .dessert {
         display: flex;
@@ -504,6 +650,10 @@ section#intro p {
 .menu .dessert h3 {
     padding: 30px 0 20px 15px;
     font-weight: 300;
+    text-decoration-line: underline;
+    text-decoration-color: #99E2D0;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
 }
 
 @media screen and (min-width : 768px) {
