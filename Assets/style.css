@@ -124,6 +124,12 @@ section#intro p {
     box-shadow: 2px 4px 8px 5px #cbcbcb;
 }
 
+.btn-explorer:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 2px 4px 7px 7px #cbcbcb;
+}
+
 .function {
     background: #ffffff;
 }
@@ -309,14 +315,16 @@ section#intro p {
 
 .heart-two {
     opacity: 0;
-}
-
-.heart-two:hover {
-    opacity: 1;
     background-clip: text;
     background: linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
     color: transparent;
     transform: scale(1.1);
+    
+}
+
+.heart-two:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .footer  {
@@ -429,9 +437,19 @@ section#intro p {
     }
 }
 
-.menu .appetizer {
-    animation: loading-appetizer 1s ease;
-}
+.menu > div .choix {
+    opacity: 0;
+    animation: loading-menu 0.5s ease;
+    animation-fill-mode: forwards;
+  }
+  
+  .menu > div .choix:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  
+  .menu > div .choix:nth-child(4) {
+    animation-delay: 1s;
+  }
 
 @media screen and (min-width : 768px) {
     .appetizer {
@@ -441,7 +459,7 @@ section#intro p {
     }
 }
 
-@keyframes loading-appetizer {
+@keyframes loading-menu {
     0% {
       transform:  translateY(-20px);
       opacity: 0;
@@ -486,6 +504,13 @@ section#intro p {
     flex-direction: column;
     justify-content: center;
     gap: 2px;
+    overflow: hidden;
+}
+
+.menu > div .choix h4 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .menu .appetizer .choix .check {
@@ -531,32 +556,16 @@ section#intro p {
     }
 }
 
-.menu .appetizer .choix span {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-}
-
 .menu .appetizer .choix p {
-    display: flex;
-    justify-content: space-between;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 15px;
 }
 
-.menu .main-course {
-    animation: loading-main-course 2s ease;
+.menu > div .choix b {
+    margin: 36px 15px 0 0;
 }
-
-@keyframes loading-main-course {
-    0% {
-      transform:  translateY(-20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-  }
 
 @media screen and (min-width : 768px) {
     .main-course {
@@ -599,6 +608,7 @@ section#intro p {
     flex-direction: column;
     justify-content: center;
     gap: 2px;
+    overflow: hidden;
 }
 
 .menu .main-course .choix .check {
@@ -618,26 +628,12 @@ section#intro p {
     width: 100px;
 }
 
-.menu .main-course .choix span {
-    display: flex;
-    justify-content: space-between;
+.menu .main-course .choix p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 15px;
 }
-
-.menu .dessert {
-    animation: loading-dessert 3s ease;
-}
-
-@keyframes loading-dessert {
-    0% {
-      transform:  translateY(-20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-  }
 
 @media screen and (min-width : 768px) {
     .dessert {
@@ -680,6 +676,7 @@ section#intro p {
     flex-direction: column;
     justify-content: center;
     gap: 2px;
+    overflow: hidden;
 }
 
 .menu .dessert .choix .check {
@@ -699,10 +696,11 @@ section#intro p {
     width: 100px;
 }
 
-.menu .dessert .choix span {
-    display: flex;
-    justify-content: space-between;
+.menu .dessert .choix p {
     font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .btn-commande {
@@ -719,3 +717,10 @@ section#intro p {
     margin: 50px auto 0 auto;
     box-shadow: 2px 4px 8px 5px #cbcbcb;
 }
+
+.btn-commande:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 2px 4px 7px 7px #cbcbcb;
+}
+
