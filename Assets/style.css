@@ -354,6 +354,11 @@ section#intro p {
     font-family: 'Roboto', sans-serif;
 }
 
+.footer .links ul li a{
+    color: white;
+    cursor: pointer;
+}
+
 .footer .links ul li i {
     margin: 0 10px 0 0;
     font-size: 15px;
@@ -423,16 +428,24 @@ section#intro p {
     }
 }
 
+.menu h1 span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .menu h1 .fa-heart {
     position: absolute;
-    right: 30px;
+    right: 20px;
     background-clip: text;
     -webkit-background-clip: text;
 }
 
 @media screen and (min-width: 768px) {
     .menu h1 .fa-heart {
-        right: 300px;
+        right: -30px;
     }
 }
 
